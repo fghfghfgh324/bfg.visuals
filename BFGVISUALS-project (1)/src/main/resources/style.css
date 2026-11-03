@@ -1,0 +1,180 @@
+/* BFGVISUALS dark theme. -accent переопределяется из кода (палитра цветов). */
+.root, .root-wrapper {
+    -accent: #8A2BE2;
+    -bg: #0d0d14;
+    -panel: #161622;
+    -panel-hi: #1f1f30;
+    -text: #e8e8f2;
+    -muted: #7d7d96;
+    -fx-font-family: "Segoe UI", "Inter", "Roboto", sans-serif;
+}
+
+.main-root {
+    -fx-background-color: linear-gradient(to bottom, #0d0d14 0%, #12101f 60%, #1a1030 100%);
+}
+
+.subtitle {
+    -fx-text-fill: -muted;
+    -fx-font-size: 13px;
+}
+
+.field-label {
+    -fx-text-fill: -muted;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.value-label {
+    -fx-text-fill: -accent;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.status {
+    -fx-text-fill: -muted;
+    -fx-font-size: 12px;
+}
+
+/* ---------- поля ---------- */
+.text-field, .combo-box, .color-picker {
+    -fx-background-color: -panel;
+    -fx-background-radius: 10;
+    -fx-border-color: #2a2a40;
+    -fx-border-radius: 10;
+    -fx-text-fill: -text;
+    -fx-prompt-text-fill: #55556b;
+    -fx-font-size: 14px;
+    -fx-padding: 4 8 4 8;
+}
+
+.text-field {
+    -fx-padding: 11 14 11 14;
+}
+
+.text-field:focused, .combo-box:focused, .combo-box-base:showing {
+    -fx-border-color: -accent;
+}
+
+.combo-box .list-cell {
+    -fx-text-fill: -text;
+    -fx-background-color: transparent;
+    -fx-padding: 6 8 6 8;
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: -panel;
+    -fx-border-color: #2a2a40;
+}
+
+.combo-box-popup .list-cell {
+    -fx-background-color: -panel;
+    -fx-text-fill: -text;
+}
+
+.combo-box-popup .list-cell:hover,
+.combo-box-popup .list-cell:filled:selected {
+    -fx-background-color: -accent;
+    -fx-text-fill: white;
+}
+
+.combo-box .arrow-button .arrow, .color-picker .arrow-button .arrow {
+    -fx-background-color: -muted;
+}
+
+.color-picker .color-picker-label .text { -fx-fill: -text; }
+
+/* ---------- кнопки ---------- */
+.play-button {
+    -fx-background-color: linear-gradient(to right, -accent, derive(-accent, -35%));
+    -fx-background-radius: 14;
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: 800;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, -accent, 22, 0.25, 0, 0);
+}
+
+.play-button:hover {
+    -fx-background-color: linear-gradient(to right, derive(-accent, 20%), -accent);
+    -fx-effect: dropshadow(gaussian, -accent, 34, 0.45, 0, 0);
+}
+
+
+.play-button:disabled {
+    -fx-opacity: 0.55;
+}
+
+.secondary-button {
+    -fx-background-color: -panel;
+    -fx-background-radius: 12;
+    -fx-border-color: #2a2a40;
+    -fx-border-radius: 12;
+    -fx-text-fill: -text;
+    -fx-font-size: 14px;
+    -fx-padding: 12 18 12 18;
+    -fx-cursor: hand;
+}
+
+.secondary-button:hover {
+    -fx-background-color: -panel-hi;
+    -fx-border-color: -accent;
+}
+
+.exit-button:hover {
+    -fx-border-color: #e5484d;
+    -fx-text-fill: #ff8a8e;
+}
+
+/* ---------- чекбоксы ---------- */
+.check-box { -fx-text-fill: -text; -fx-font-size: 14px; }
+.check-box .box {
+    -fx-background-color: -panel;
+    -fx-background-radius: 6;
+    -fx-border-color: #3a3a55;
+    -fx-border-radius: 6;
+    -fx-padding: 4;
+}
+.check-box:selected .box { -fx-background-color: -accent; -fx-border-color: -accent; }
+.check-box .mark { -fx-background-color: white; }
+
+/* ---------- слайдер ---------- */
+.slider .track {
+    -fx-background-color: #2a2a40;
+    -fx-background-radius: 4;
+    -fx-pref-height: 6;
+}
+.slider .thumb {
+    -fx-background-color: -accent;
+    -fx-background-radius: 12;
+    -fx-pref-width: 20;
+    -fx-pref-height: 20;
+    -fx-effect: dropshadow(gaussian, -accent, 10, 0.4, 0, 0);
+}
+.slider .axis { -fx-tick-label-fill: -muted; -fx-tick-label-font-size: 11px; }
+.slider .axis .axis-tick-mark, .slider .axis .axis-minor-tick-mark { -fx-stroke: #3a3a55; }
+
+/* ---------- вкладки ---------- */
+.tab-pane { -fx-background-color: transparent; }
+.tab-pane > .tab-header-area > .tab-header-background { -fx-background-color: -panel; }
+.tab-pane > .tab-header-area { -fx-padding: 0; }
+.tab-pane .tab {
+    -fx-background-color: -panel;
+    -fx-background-insets: 0;
+    -fx-padding: 8 22 8 22;
+}
+.tab-pane .tab .tab-label { -fx-text-fill: -muted; -fx-font-size: 13px; -fx-font-weight: bold; }
+.tab-pane .tab:selected { -fx-background-color: -bg; -fx-border-color: -accent; -fx-border-width: 0 0 2 0; }
+.tab-pane .tab:selected .tab-label { -fx-text-fill: -text; }
+.tab-pane > .tab-content-area { -fx-background-color: transparent; }
+
+/* ---------- диалоги ---------- */
+.dialog.dialog-pane {
+    -fx-background-color: #12101f;
+}
+.dialog.dialog-pane .label { -fx-text-fill: -text; }
+.dialog.dialog-pane .header-panel { -fx-background-color: -panel; }
+.dialog.dialog-pane .button {
+    -fx-background-color: -accent;
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+}
